@@ -1,5 +1,7 @@
 package com.test.config;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,4 +15,5 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan(basePackages = "com.test")
 public class AppConfig {
+    private Logger log = LoggerFactory.getLogger(AppInitialzer.class);
 }

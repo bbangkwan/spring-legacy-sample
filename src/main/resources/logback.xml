@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+    <!-- 변수 지정 -->
+    <!--property name="LOG_DIR" value="/apps/doobuckyi-web/log" /-->
+    <!--property name="LOG_DIR" value="D:/bbk_dev_project/log/test_log/doobuckyi_log" /-->
+    <!--property name="LOG_PATH_NAME" value="${LOG_DIR}/doobuckyi_web.log" /-->
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %highlight(%-5level) %magenta(%-4relative) --- [%thread{10}] %cyan(%logger{36}.%M\(%line\)) : %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH_NAME}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH_NAME}.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %-4relative  [%thread{10}] %logger{36}.%M\(%line\) : %msg%n</pattern>
+        </encoder>
+    </appender-->
+
+    <logger name="org.springframework" level="info"/>
+    <logger name="org.hibernate" level="debug"/>
+
+    <root level="debug">
+        <appender-ref ref="CONSOLE"/> <!-- Console에 로그를 출력하고자 할 때 사용 -->
+        <!--appender-ref ref="FILE"/--> <!-- File로 로그를 남기고자 할 때 사용 -->
+    </root>
+
+</configuration>

@@ -18,6 +18,9 @@ public class HomeController {
     @RequestMapping(value = "/")
     @ResponseBody
     public String home(){
+        log.info("home controller!!!!!");
+        log.debug("test!!!!");
+        
         return "spring legacy sample with java config!!!";
     }
 }

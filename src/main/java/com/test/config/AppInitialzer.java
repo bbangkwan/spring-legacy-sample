@@ -23,7 +23,7 @@ public class AppInitialzer implements WebApplicationInitializer{
     
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
-        log.info("onStartup");
+        log.info("onStartup!!");
         WebApplicationContext context = getContext();
         
         servletContext.addListener(new ContextLoaderListener(context));
